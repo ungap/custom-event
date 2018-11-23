@@ -1,6 +1,6 @@
 /*! (c) Andrea Giammarchi - ISC */
 var self = this || /* istanbul ignore next */ {};
-try { self.CustomEvent = CustomEvent; }
+try { self.CustomEvent = new CustomEvent('.').constructor; }
 catch (CustomEvent) {
   self.CustomEvent = function CustomEvent(type, init) {
     if (!init)
