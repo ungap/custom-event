@@ -21,6 +21,7 @@ function test() {
 
   var b = new CustomEvent('b', {bubbles: true, cancelable: true});
   console.assert(b.type === 'b');
+  console.log(b.cancelable, b.bubbles);
   console.assert(b.cancelable && b.bubbles);
 
   var c = new CustomEvent('c', {bubbles: true});
