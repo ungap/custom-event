@@ -1,6 +1,6 @@
 {
   "name": "@ungap/custom-event",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A CustomEvent polyfill for legacy browsers.",
   "main": "cjs/index.js",
   "module": "esm/index.js",
