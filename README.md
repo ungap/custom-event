@@ -8,6 +8,6 @@ A [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) po
   * ESM via `import CustomEvent from '@ungap/custom-event'`
   * CJS via `const CustomEvent = require('@ungap/custom-event')`
 
-Compatible down to IE9, works well with ES5 shim upfront in IE8 (and maybe lower too).
+Compatible with IE11, requires [dom4](https://github.com/WebReflection/dom4#dom4) upfront for older browsers.
 
 [Live test](https://ungap.github.io/custom-event/test/)

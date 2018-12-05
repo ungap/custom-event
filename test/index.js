@@ -1,16 +1,22 @@
 if (typeof document === 'undefined')
   global.document = {
     createEvent: function () {
-      return {initEvent: function (type, init) {
+      return {initCustomEvent: function (type, bubbles, cancelable, detail) {
         this.type = type;
-        if (!init) init = {};
-        this.bubbles = !!init.bubbles;
-        this.cancelable = !!init.cancelable;
+        this.bubbles = !!bubbles;
+        this.cancelable = !!cancelable;
+        this.detail = detail;
       }};
     }
   };
 
 var CustomEvent = require('../cjs');
+test();
+
+delete require.cache[require.resolve('../cjs')];
+global.CustomEvent = CustomEvent;
+
+CustomEvent = require('../cjs');
 test();
 
 function test() {
@@ -21,7 +27,6 @@ function test() {
 
   var b = new CustomEvent('b', {bubbles: true, cancelable: true});
   console.assert(b.type === 'b');
-  console.log(b.cancelable, b.bubbles);
   console.assert(b.cancelable && b.bubbles);
 
   var c = new CustomEvent('c', {bubbles: true});
