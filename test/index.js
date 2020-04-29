@@ -1,3 +1,7 @@
+var CustomEvent = require('../cjs');
+test();
+
+delete require.cache[require.resolve('../cjs')];
 if (typeof document === 'undefined')
   global.document = {
     createEvent: function () {
@@ -9,12 +13,6 @@ if (typeof document === 'undefined')
       }};
     }
   };
-
-var CustomEvent = require('../cjs');
-test();
-
-delete require.cache[require.resolve('../cjs')];
-global.CustomEvent = CustomEvent;
 
 CustomEvent = require('../cjs');
 test();
