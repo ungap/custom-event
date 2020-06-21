@@ -1,5 +1,5 @@
 /*! (c) Andrea Giammarchi - ISC */
-var self = this || /* istanbul ignore next */ {};
+var self = {};
 self.CustomEvent = typeof CustomEvent === 'function' ?
   CustomEvent :
   (function (__p__) {
